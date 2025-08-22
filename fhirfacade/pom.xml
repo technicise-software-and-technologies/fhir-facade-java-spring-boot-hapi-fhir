@@ -6,7 +6,7 @@
 
 	<parent>
 		<groupId>org.springframework.guides</groupId>
-		<artifactId>tut-rest</artifactId>
+		<artifactId>fhirfacade</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
