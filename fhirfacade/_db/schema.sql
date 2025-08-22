@@ -1,0 +1,7 @@
+CREATE SEQUENCE employee_seq START WITH 1 INCREMENT BY 50;
+
+CREATE TABLE employee (
+    id BIGINT DEFAULT nextval('employee_seq') PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    role VARCHAR(255) NOT NULL
+);
