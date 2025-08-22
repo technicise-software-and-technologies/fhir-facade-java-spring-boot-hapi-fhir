@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "4b06fe71-9cc7-437e-98f3-4c40124a433f",
+		"name": "fhir_facade",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46935804",
+		"_collection_link": "https://atanupandit.postman.co/workspace/Atanu-Pandit's-Workspace~e9c78098-f788-4866-8af4-c598e08a875d/collection/46935804-4b06fe71-9cc7-437e-98f3-4c40124a433f?action=share&source=collection_link&creator=46935804"
+	},
+	"item": [
+		{
+			"name": "get employee",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/employees/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"employees",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get employee",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/employees/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"employees",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/hal+json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Aug 2025 13:07:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Bilbo Baggins\",\n    \"role\": \"burglar\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:9090/employees/1\"\n        },\n        \"employees\": {\n            \"href\": \"http://localhost:9090/employees\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get all employee",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/employees",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get all employee",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/employees",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/hal+json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Aug 2025 13:19:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_embedded\": {\n        \"employeeList\": [\n            {\n                \"id\": 1,\n                \"name\": \"Bilbo Baggins\",\n                \"role\": \"burglar\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:9090/employees/1\"\n                    },\n                    \"employees\": {\n                        \"href\": \"http://localhost:9090/employees\"\n                    }\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Frodo Baggins\",\n                \"role\": \"thief\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:9090/employees/2\"\n                    },\n                    \"employees\": {\n                        \"href\": \"http://localhost:9090/employees\"\n                    }\n                }\n            },\n            {\n                \"id\": 52,\n                \"name\": \"Bilbo Baggins\",\n                \"role\": \"burglar\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:9090/employees/52\"\n                    },\n                    \"employees\": {\n                        \"href\": \"http://localhost:9090/employees\"\n                    }\n                }\n            },\n            {\n                \"id\": 53,\n                \"name\": \"Frodo Baggins\",\n                \"role\": \"thief\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:9090/employees/53\"\n                    },\n                    \"employees\": {\n                        \"href\": \"http://localhost:9090/employees\"\n                    }\n                }\n            }\n        ]\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:9090/employees\"\n        }\n    }\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:9090",
+			"type": "default"
+		}
+	]
+}
