@@ -26,52 +26,7 @@
 					]
 				}
 			},
-			"response": [
-				{
-					"name": "get employee",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/employees/1",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"employees",
-								"1"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "",
-					"header": [
-						{
-							"key": "Content-Type",
-							"value": "application/hal+json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 22 Aug 2025 13:07:27 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"id\": 1,\n    \"name\": \"Bilbo Baggins\",\n    \"role\": \"burglar\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:9090/employees/1\"\n        },\n        \"employees\": {\n            \"href\": \"http://localhost:9090/employees\"\n        }\n    }\n}"
-				}
-			]
+			"response": []
 		},
 		{
 			"name": "get all employee",
@@ -109,7 +64,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": "",
+					"_postman_previewlanguage": null,
 					"header": [
 						{
 							"key": "Content-Type",
@@ -134,6 +89,389 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"_embedded\": {\n        \"employeeList\": [\n            {\n                \"id\": 1,\n                \"name\": \"Bilbo Baggins\",\n                \"role\": \"burglar\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:9090/employees/1\"\n                    },\n                    \"employees\": {\n                        \"href\": \"http://localhost:9090/employees\"\n                    }\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Frodo Baggins\",\n                \"role\": \"thief\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:9090/employees/2\"\n                    },\n                    \"employees\": {\n                        \"href\": \"http://localhost:9090/employees\"\n                    }\n                }\n            },\n            {\n                \"id\": 52,\n                \"name\": \"Bilbo Baggins\",\n                \"role\": \"burglar\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:9090/employees/52\"\n                    },\n                    \"employees\": {\n                        \"href\": \"http://localhost:9090/employees\"\n                    }\n                }\n            },\n            {\n                \"id\": 53,\n                \"name\": \"Frodo Baggins\",\n                \"role\": \"thief\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:9090/employees/53\"\n                    },\n                    \"employees\": {\n                        \"href\": \"http://localhost:9090/employees\"\n                    }\n                }\n            }\n        ]\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:9090/employees\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create employee",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \n    \"name\": \"Soumya Dip\",\n    \"role\": \"java-dev\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/employees",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get employee",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/employees/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"employees",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/hal+json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Aug 2025 13:07:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Bilbo Baggins\",\n    \"role\": \"burglar\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:9090/employees/1\"\n        },\n        \"employees\": {\n            \"href\": \"http://localhost:9090/employees\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Modify existing employee",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \n    \"name\": \"Rohit Das\",\n    \"role\": \"Js-dev\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/employees/52",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"employees",
+						"52"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get employee",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/employees/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"employees",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/hal+json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Aug 2025 13:07:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Bilbo Baggins\",\n    \"role\": \"burglar\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:9090/employees/1\"\n        },\n        \"employees\": {\n            \"href\": \"http://localhost:9090/employees\"\n        }\n    }\n}"
+				},
+				{
+					"name": "Modify existing employee",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n                \n    \"name\": \"Rohit Das\",\n    \"role\": \"Js-dev\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/employees/52",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"employees",
+								"52"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Aug 2025 10:30:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 52,\n    \"name\": \"Rohit Das\",\n    \"role\": \"Js-dev\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Remove employee",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \n    \"name\": \"Rohit Das\",\n    \"role\": \"Js-dev\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/employees/53",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"employees",
+						"53"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get employee",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/employees/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"employees",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/hal+json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Aug 2025 13:07:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Bilbo Baggins\",\n    \"role\": \"burglar\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:9090/employees/1\"\n        },\n        \"employees\": {\n            \"href\": \"http://localhost:9090/employees\"\n        }\n    }\n}"
+				},
+				{
+					"name": "Modify existing employee",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n                \n    \"name\": \"Rohit Das\",\n    \"role\": \"Js-dev\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/employees/52",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"employees",
+								"52"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Aug 2025 10:30:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"id\": 52,\n    \"name\": \"Rohit Das\",\n    \"role\": \"Js-dev\"\n}"
+				},
+				{
+					"name": "Remove employee",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n                \n    \"name\": \"Rohit Das\",\n    \"role\": \"Js-dev\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/employees/53",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"employees",
+								"53"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Aug 2025 10:32:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": ""
 				}
 			]
 		}
