@@ -52,7 +52,7 @@ class EmployeeController {
 	@PostMapping("/employees")
 	Employee newEmployee(@RequestBody Employee newEmployee) {
 
-		String baseURL = "https://localhost:5001/fhir";
+		String baseURL = "http://localhost:8080/fhir";
 
 		FhirContext ctx = FhirContext.forR4();
 
