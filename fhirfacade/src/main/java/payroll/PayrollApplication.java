@@ -1,6 +1,7 @@
 package payroll;
 
 import org.hl7.fhir.r4.model.Patient;
+import org.hl7.fhir.r4.model.Practitioner;
 import org.hl7.fhir.r4.model.ContactPoint.ContactPointSystem;
 import org.hl7.fhir.r4.model.Enumerations.AdministrativeGender;
 import org.springframework.boot.SpringApplication;
@@ -22,15 +23,15 @@ public class PayrollApplication {
 
 		IGenericClient client = ctx.newRestfulGenericClient(baseURL);
 
-		Patient patient = new Patient();
-		patient.addName().addGiven("Atanu").setFamily("Pandit");
-		patient.setActive(true);
-		patient.setGender(AdministrativeGender.MALE);
-		patient.addTelecom().setSystem(ContactPointSystem.PHONE).setValue("1234567890");
+		Practitioner practitioner = new Practitioner();
+		practitioner.addName().addGiven("Robert").setFamily("Brown");
+		practitioner.setActive(true);
+		practitioner.setGender(AdministrativeGender.MALE);
+		practitioner.addTelecom().setSystem(ContactPointSystem.PHONE).setValue("784685188");
 
-		MethodOutcome outcome = client.create().resource(patient).prettyPrint().encodedJson().execute();
+		MethodOutcome outcome = client.create().resource(practitioner).prettyPrint().encodedJson().execute();
 
-		// String jsonPatient = ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(patient);
+		// String jsonpractitioner = ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(practitioner);
 
 		System.out.println(ctx.newJsonParser().encodeResourceToString(outcome.getResource()));
 	}
