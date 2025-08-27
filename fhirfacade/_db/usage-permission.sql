@@ -1,0 +1,1 @@
+GRANT USAGE, SELECT ON SEQUENCE employee_seq TO technicise;
